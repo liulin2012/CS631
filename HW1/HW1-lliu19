@@ -1,0 +1,63 @@
+HW1 - code reading
+
+System: NetBSD and Linux coreutils-8.24
+
+
+1. mkdir
+
+I choose the mkdir command because it is one of the most useful command in
+unix system and easy for me to understand the complex unix source code.
+
+The NetBSD code is neater and cleaner than linux.  It just uses the basic
+funtion call from the C standard library and POSIX library so it implements
+the basic function of creating the directory.  The code is readable because
+it use the simple c language feature.  
+
+This program is divided into two parts.  The first part is 'getopt' and the
+second is to create the directory according to the option.  When the 'p'
+flag set to 1, the main function needs to call 'mkpath' to create the
+intermediate directories.
+
+The linux code is complex and have more function.  It has implemented more
+option than NetBSD so the source code is more complex.  The program is not
+just using C standard library but also his own function call from lots of
+its own head files so there are some external function call.  It also use
+some advanced C language features in his code.  But the program executing
+process is almost same to the NetBSD.
+
+Both of them implement the '-p' and '-m' option.  The '-p' is used to create
+intermediate directories.  The '-m' option is used to set the file
+permission.
+
+The linux version has two additional option which is used to print a message
+for each created directory and set the SELinux security context of each
+created directory to CTX.  The 'usage' function has more explanation than
+the NetBSD.
+
+
+2. chmod
+
+I choose the chmod because it is related to the unix permission which is the
+most important features in unix system.  
+
+I have downloaded the NetBSD source code for compile and debug.  The NetBSD
+source code just use the standard and POSIX library, so I can run it in my
+MacOS system and it works perfect.  The code is neat and easy, so it can run
+in most unix-like system.  It can help us to learn the unix source code
+quickly.  I like it!
+
+The program is divided into three parts.  The first part is 'getopt_long'
+which is same to the 'mkdir'.  The second part is to set the mode.  The
+program use 'setmode' to analyse the 'mode' to 'set'.  Finally, the for-loop
+is used to set the permission of file or directory.  The 'usage' report
+the failure.
+
+The linux version is more complex and hard to understand.  It use the
+'getopt_long' to get the option too.  But It also analyse the mode when the
+option is got, not like the NetBSD version so the switch loop is very long.
+And then the method 'process_files' is used to process all the files using
+function 'process_file'.
+
+The linux source code has more explanation about the usage.  When the
+permission mode change successfully, the program will output the change.
+Besides, it has more option than the NetBSD version.
