@@ -1,0 +1,10 @@
+int name_cp(const FTSENT *a, const FTSENT *b);
+int r_name_cp(const FTSENT *a, const FTSENT *b);
+int acc_time_cp(const FTSENT *a, const FTSENT *b);
+int r_acc_time_cp(const FTSENT *a, const FTSENT *b);
+int stat_time_cp(const FTSENT *a, const FTSENT *b);
+int r_stat_time_cp(const FTSENT *a, const FTSENT *b);
+int mod_time_cp(const FTSENT *a, const FTSENT *b);
+int r_mod_time_cp(const FTSENT *a, const FTSENT *b);
+int size_cp(const FTSENT *a, const FTSENT *b);
+int r_size_cp(const FTSENT *a, const FTSENT *b);
